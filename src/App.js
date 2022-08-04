@@ -1,9 +1,10 @@
 import './App.css';
+import Topbar from './components/Topbar/Topbar';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello expressify</h1>
+      <Topbar />
     </div>
   );
 }
