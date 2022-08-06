@@ -3,10 +3,10 @@
     height: auto;
     display: flex;
     flex-direction: row;
-    margin-top: 4.4rem;
+    margin-top: 4.2rem;
     overflow: hidden;
     position: relative;
-    border: 2px solid red;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .homeSlider__container .homeSlider__left {
