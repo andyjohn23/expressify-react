@@ -10,7 +10,7 @@ function HomeSlider() {
                 <h1>Express yourself.</h1>
                 <p>Discover stories, thinking, and expertise from writers on any topic.</p>
                 <Link to="" style={{ textDecoration: "none" }}>
-                    <button>Start reading</button>
+                    <button type='button'>Start reading</button>
                 </Link>
             </div>
             <div className='homeSlider__right'>
