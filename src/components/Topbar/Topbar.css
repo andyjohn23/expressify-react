@@ -6,6 +6,7 @@
     -moz-box-shadow: 0 5px 9px -9px #999;
     box-shadow: 0 5px 9px -9px #999;
     z-index: 999;
+    border: 2px solid black;
 }
 
 .navbar .navbar__right {

@@ -8,6 +8,8 @@ function HomePage() {
         <div className='homePage__container'>
             <div className='navbar'>
                 <Topbar />
+            </div>
+            <div className='slider'>
                 <HomeSlider />
             </div>
         </div>
