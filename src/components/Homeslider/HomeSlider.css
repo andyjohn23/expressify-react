@@ -1,0 +1,19 @@
+.homeSlider__container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.homeSlider__container .homeSlider__left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.homeSlider__container .homeSlider__right img {
+    width: 650px;
+    height: 450px;
+    object-fit: cover;
+}
