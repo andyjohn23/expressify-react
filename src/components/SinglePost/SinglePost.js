@@ -13,10 +13,14 @@ function SinglePost() {
                 <span>Andy John</span>
             </div>
             <div className='singlePost__content'>
-                <h1>COVID-19 and the End of Plans</h1>
                 <div className='editIcons'>
-                    <EditIcon className='editIcon' style={{cursor: "pointer"}} />
-                    <DeleteIcon className='deleteIcon' style={{cursor: "pointer"}} />
+                    <div className='title'>
+                        <h1>COVID-19 and the End of Plans</h1>
+                    </div>
+                    <div className='Icons'>
+                        <EditIcon className='editIcon' style={{ cursor: "pointer" }} />
+                        <DeleteIcon className='deleteIcon' style={{ cursor: "pointer" }} />
+                    </div>
                 </div>
                 <img src={singleImage} alt="postimage" className='postImage' />
                 <p>

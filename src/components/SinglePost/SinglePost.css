@@ -19,6 +19,15 @@
     align-items: center;
     align-content: center;
     margin-bottom: 1rem;
+    justify-content: space-between;
+}
+
+.singlePost__container .Icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1rem;
     gap: 0.5rem;
 }
 
