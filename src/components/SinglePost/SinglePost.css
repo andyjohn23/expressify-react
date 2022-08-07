@@ -35,12 +35,21 @@
     font-size: 30px;
     border: 1px solid black;
     padding: 2px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.singlePost__container .editIcon:hover {
+    color: black;
 }
 
 .singlePost__container .deleteIcon {
     font-size: 30px;
     border: 1px solid black;
     padding: 2px;
+    color: rgba(245, 76, 76, 0.8);
+}
+
+.singlePost__container .deleteIcon:hover {
     color: #F54C4C;
 }
 
