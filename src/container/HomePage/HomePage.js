@@ -1,8 +1,8 @@
 import React from 'react'
-import HomeSlider from '../components/Homeslider/HomeSlider'
-import Posts from '../components/Posts/Posts'
-import Sidebar from '../components/Sidebar/Sidebar'
-import Topbar from '../components/Topbar/Topbar'
+import HomeSlider from '../../components/Homeslider/HomeSlider'
+import Posts from '../../components/Posts/Posts'
+import Sidebar from '../../components/Sidebar/Sidebar'
+import Topbar from '../../components/Topbar/Topbar'
 import "./HomePage.css"
 
 function HomePage() {
