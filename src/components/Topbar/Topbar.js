@@ -30,7 +30,7 @@ function Topbar() {
                                     <button>Submit a blog</button>
                                 </div>
                                 <div className="loginLink">
-                                    <Nav.Link className="navLinks">Log in</Nav.Link>
+                                    <Nav.Link to="" className="navLinks">Log in</Nav.Link>
                                 </div>
                             </div>
                         </Nav>
