@@ -1,0 +1,6 @@
+.singlepost__content {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}

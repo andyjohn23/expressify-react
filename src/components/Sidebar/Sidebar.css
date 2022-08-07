@@ -1,5 +1,13 @@
 .sidebar__container {
-    flex: 3;
     position: sticky;
     top: 0;
+    flex: 3;
+}
+
+.sidebar__container h2 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
 }

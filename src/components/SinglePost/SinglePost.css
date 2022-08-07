@@ -1,0 +1,27 @@
+.singlePost__container {
+    flex: 5;
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+
+.singlePost__container h1 {
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.singlePost__container p {
+    font-size: 21.5px;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 1rem;
+}
+
+.singlePost__container img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+}
