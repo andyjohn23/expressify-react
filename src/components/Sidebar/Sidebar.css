@@ -1,0 +1,5 @@
+.sidebar__container {
+    flex: 3;
+    position: sticky;
+    top: 0;
+}
