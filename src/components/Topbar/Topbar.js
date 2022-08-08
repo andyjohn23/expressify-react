@@ -10,7 +10,7 @@ function Topbar() {
             <Navbar expand="lg" className="navbar" fixed="top">
                 <Container fluid>
                     <Navbar.Brand>
-                        <Nav.Link to="/"><h1>Expressify</h1></Nav.Link>
+                        <Nav.Link href="/"><h1>Expressify</h1></Nav.Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
