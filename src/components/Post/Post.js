@@ -4,24 +4,21 @@ import postImage from "../../assets/images/blog.png"
 import { Avatar } from "@mui/material"
 import { Link } from 'react-router-dom'
 
-function Post() {
+function Post({ post }) {
     return (
         <div className='post__container'>
-            <Link to="" style={{ textDecoration: "none" }}>
+            <Link to={`/post/${post.id}`} style={{ textDecoration: "none" }}>
                 <div className='card post__card container-fluid'>
                     <div className='post__content'>
                         <div className='post__owner'>
                             <Avatar src={postImage} className='user__avatar' />
                             <span>Andy John</span>
                         </div>
-                        <h1>COVID-19 and the End of Plans</h1>
-                        <p>
-                            Along with everything else this virus took from us,
-                            it took away this thing we used to consider plans.
-                        </p>
+                        <h1>{post.title}</h1>
+                        <p>{post.content}</p>
                     </div>
                     <div className='post__image'>
-                        <img src={postImage} alt="post-image" />
+                        <img src={postImage} alt="post" />
                     </div>
                 </div>
             </Link>
