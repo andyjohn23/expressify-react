@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/singlepost" component={SinglePage} />
+          <Route exact path="/post/:id" component={SinglePage} />
           <Route exact path="/createpost" component={Write} />
         </Switch>
       </Router>

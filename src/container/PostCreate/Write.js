@@ -14,6 +14,7 @@ function Write() {
                 <form className='postForm'>
                     <label htmlFor='fileInput'>
                         <AddIcon className='addIcon' />
+                        <input type="text" placeholder="Title" className='postTitle' />
                     </label>
                     <input type="file" name="" id="fileInput" style={{ display: "none" }} />
                     <textarea type="text" rows="10" cols="50" placeholder="Tell your story..."></textarea>
