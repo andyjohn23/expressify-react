@@ -3,6 +3,7 @@ import "./Topbar.css"
 import { Search } from "@mui/icons-material";
 // import { Avatar } from "@mui/material";
 import { Nav, Navbar, Container } from "react-bootstrap";
+import { Link } from "react-router-dom"
 
 function Topbar() {
     return (
@@ -10,7 +11,11 @@ function Topbar() {
             <Navbar expand="lg" className="navbar" fixed="top">
                 <Container fluid>
                     <Navbar.Brand>
-                        <Nav.Link href="/"><h1>Expressify</h1></Nav.Link>
+                        <Nav.Link>
+                            <Link to="/" style={{ textDecoration: "none" }}>
+                                <h1>Expressify</h1>
+                            </Link>
+                        </Nav.Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -30,7 +35,11 @@ function Topbar() {
                                     <button>Submit a blog</button>
                                 </div>
                                 <div className="loginLink">
-                                    <Nav.Link to="" className="navLinks">Log in</Nav.Link>
+                                    <Nav.Link to="" className="navLinks">
+                                        <Link to="" style={{ textDecoration: "none" }}>
+                                            Log in
+                                        </Link>
+                                    </Nav.Link>
                                 </div>
                             </div>
                         </Nav>
