@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./SinglePost.css"
 import singleImage from "../../assets/images/blog.png"
 import { Avatar } from "@mui/material"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useLocation } from "react-router";
+import axios from 'axios'
 
 function SinglePost() {
+    const location = useLocation()
+    const path = location.pathname.split("/")[2];
+    const [post, setPost] = useState({})
+
+    useEffect(() => {
+        const getPost = async () => {
+            const response = await axios.get("http://localhost:3000/api/posts/" + path)
+            setPost(response.data)
+        }
+        getPost()
+    }, [path])
+
     return (
         <div className='singlePost__container'>
             <div className='post__owner'>
@@ -15,7 +29,7 @@ function SinglePost() {
             <div className='singlePost__content'>
                 <div className='editIcons'>
                     <div className='title'>
-                        <h1>COVID-19 and the End of Plans</h1>
+                        <h1>{post.title}</h1>
                     </div>
                     <div className='Icons'>
                         <EditIcon className='editIcon' style={{ cursor: "pointer" }} />
@@ -23,22 +37,7 @@ function SinglePost() {
                     </div>
                 </div>
                 <img src={singleImage} alt="postimage" className='postImage' />
-                <p>
-                    We didn’t have a family Christmas this year,
-                    I got COVID. I had gone down to New York City
-                    for a work dinner on a Wednesday night in December,
-                    pretty sure that’s what got me. More than two hours
-                    unmasked in a packed restaurant while Omicron raged.
-                    By Friday my throat felt a little strange. By Saturday
-                    afternoon the throat issue had been joined by a persistent
-                    headache and I decided to take a rapid test, which immediately
-                    displayed as positive. Standing in our bedroom on the afternoon
-                    of December 18 I texted my wife, who was downstairs with our two
-                    college-aged daughters, suitcases more or less packed for the
-                    five-hour drive to grandma and grandpa’s house and the customary
-                    expectation of days with extended family and friends.
-                    “Think about what we would do if I had COVID.”
-                </p>
+                <p>{post.content}</p>
             </div>
         </div>
     )
