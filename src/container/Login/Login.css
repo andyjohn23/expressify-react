@@ -1,4 +1,4 @@
-.signup__container {
+.login__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,31 +6,29 @@
     height: 100vh;
 }
 
-.signup__container img {
+.login__container img {
     width: 85px;
     object-fit: cover;
     pointer-events: none;
 }
 
-.signup__container h1 {
+.login__container h1 {
     color: rgba(0, 0, 0, 0.8);
     font-size: 30px;
     font-weight: bold;
     font-family: sans-serif;
-    padding-top: 2rem;
-    background: transparent;
 }
 
-.signup__container .logo {
+.login__container .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    background: transparent;
 }
 
-.signup__form {
+.login__form {
     margin: 0 auto;
+    margin-top: 0.3rem;
     width: 30%;
     border: 1px solid white;
     background-color: white;
@@ -40,31 +38,16 @@
     -moz-box-shadow: 0px 6px 18px -7px rgba(0, 0, 0, 0.94);
 }
 
-.signup__form .createHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.signup__form .createHeader h2 {
+.login__form h2 {
     color: rgba(0, 0, 0, 0.8);
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 17px;
+    font-weight: normal;
     font-family: "Sora" sans-serif;
     text-align: center;
     padding-top: 1.7rem;
 }
 
-.signup__form .createHeader h3 {
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 14px;
-    font-weight: normal;
-    font-family: "Sora" sans-serif;
-    text-align: center;
-}
-
-.signup__form .form form {
+.login__form .form form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,9 +56,8 @@
     padding: 20px;
 }
 
-.signup__form .usernameSignup,
-.emailSignup,
-.passwordSignup {
+.login__form .emailLogin,
+.passwordLogin {
     width: 100%;
     height: 50px;
     background-color: white;
@@ -86,16 +68,14 @@
     background-color: white;
 }
 
-.signup__form .usernameInput,
-.emailInput,
+.login__form .emailInput,
 .passwordInput ::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.7);
     font-size: 17px;
     font-family: sans-serif;
 }
 
-.signup__form .usernameInput,
-.emailInput,
+.login__form .emailInput,
 .passwordInput {
     width: 100%;
     height: 50px;
@@ -108,7 +88,7 @@
     padding-left: 15px;
 }
 
-.signup__form .form form input[type="submit"] {
+.login__form .form form input[type="submit"] {
     margin-top: 0.5rem;
     width: 100%;
     height: 50px;
@@ -122,22 +102,53 @@
     color: white;
 }
 
-.signup__form .haveAccount {
+.login__form .forgotPassword {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
 }
 
-.signup__form .haveAccount span {
+.login__form .forgotPassword span {
     font-size: 14px;
     font-weight: normal;
     color: #0e93cd;
+}
+
+.login__form .createAccount {
+    width: 100%;
+    padding: 20px;
+    margin-top: -0.7rem;
+}
+
+.login__form .createAccount button {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    border-radius: 5px;
+    background-color: #0e93cd;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.login__form .option {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 10px white inset !important;
 }

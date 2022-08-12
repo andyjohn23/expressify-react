@@ -6,10 +6,9 @@ function Signup() {
     return (
         <div className="signup__container">
             <div className="logo">
-                <Link to="/">
-                    <img src={PhotoBoardLogo} alt="logo" />
+                <Link to="/" style={{textDecoration: "none"}}>
+                    <h1>Expressify</h1>
                 </Link>
-                <h1>Photo-Board</h1>
             </div>
             <div className="signup__form">
                 <div className="createHeader">
@@ -17,15 +16,16 @@ function Signup() {
                     <h3>It's quick and easy.</h3>
                 </div>
                 <div className="form">
-                    <form onSubmit={handleSignUpForm}>
+                    <form >
+                    {/* onSubmit={handleSignUpForm} */}
                         <div className="usernameSignup">
                             <input
                                 type="text"
                                 className="usernameInput"
                                 placeholder="Username"
                                 name="username"
-                                value={username}
-                                onChange={(e) => onChange(e)}
+                                // value={username}
+                                // onChange={(e) => onChange(e)}
                                 required
                             />
                         </div>
@@ -35,8 +35,8 @@ function Signup() {
                                 className="emailInput"
                                 placeholder="Email address"
                                 name="email"
-                                value={email}
-                                onChange={(e) => onChange(e)}
+                                // value={email}
+                                // onChange={(e) => onChange(e)}
                                 required
                             />
                         </div>
@@ -46,9 +46,9 @@ function Signup() {
                                 className="passwordInput"
                                 placeholder="Password"
                                 name="password"
-                                value={password}
+                                // value={password}
                                 minLength="6"
-                                onChange={(e) => onChange(e)}
+                                // onChange={(e) => onChange(e)}
                                 required
                             />
                         </div>
@@ -58,9 +58,9 @@ function Signup() {
                                 className="passwordInput"
                                 placeholder="Confirm Password"
                                 name="re_password"
-                                value={password2}
+                                // value={password2}
                                 minLength="6"
-                                onChange={(e) => onChange(e)}
+                                // onChange={(e) => onChange(e)}
                                 required
                             />
                         </div>
