@@ -17,6 +17,8 @@
     font-size: 30px;
     font-weight: bold;
     font-family: sans-serif;
+    padding-top: 2rem;
+    background: transparent;
 }
 
 .login__container .logo {
@@ -24,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    background: transparent;
 }
 
 .login__form {

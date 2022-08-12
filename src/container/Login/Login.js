@@ -6,7 +6,7 @@ function Login() {
     return (
         <div className="login__container">
             <div className="logo">
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: "none" }}>
                     <h1>Expressify</h1>
                 </Link>
             </div>

@@ -35,9 +35,9 @@ function Topbar() {
                                     <button>Submit a blog</button>
                                 </div>
                                 <div className="loginLink">
-                                    <Nav.Link to="" className="navLinks">
-                                        <Link to="" style={{ textDecoration: "none" }}>
-                                            Log in
+                                    <Nav.Link className="navLinks">
+                                        <Link to="/login" className="navLinks" style={{ textDecoration: "none" }}>
+                                            <span>Log in</span>
                                         </Link>
                                     </Nav.Link>
                                 </div>
