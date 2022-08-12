@@ -10,7 +10,8 @@ import axios from 'axios'
 function SinglePost() {
     const location = useLocation()
     const path = location.pathname.split("/")[2];
-    const [post, setPost] = useState({})
+    const [post, setPost] = useState({});
+    const [user, setUser] = useState({});
 
     useEffect(() => {
         const getPost = async () => {
@@ -20,11 +21,19 @@ function SinglePost() {
         getPost()
     }, [path])
 
+    useEffect(() => {
+        const getUser = async () => {
+            const response = await axios.get("http://localhost:3000/api/users/")
+            setUser(response.data)
+        }
+        getUser()
+    }, [])
+
     return (
         <div className='singlePost__container'>
             <div className='post__owner'>
                 <Avatar src={singleImage} className='user__avatar' />
-                <span>Andy John</span>
+                <span>{user.username}</span>
             </div>
             <div className='singlePost__content'>
                 <div className='editIcons'>
