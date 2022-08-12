@@ -1,12 +1,12 @@
-import { createContext, useReducer } from "react"
-const INITIAL_STATE = {
-    user: null,
-    isFetching: false,
-    error: false
-}
+export const LoginStart = (userCredentials) => ({
+    type:"LOGIN_START"
+})
 
-export const Context = createContext(INITIAL_STATE)
+export const LoginSuccess = (user)=>({
+    type: "LOGIN_SUCCESS",
+    payload: user,
+})
 
-export const ContextProvider = ({ children }) => {
-
-}
+export const LoginFailure = ()=>({
+    type: "LOGIN_FAILURE"
+})
