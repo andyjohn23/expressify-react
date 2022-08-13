@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./Login.css"
 import { Link } from "react-router-dom";
 
 function Login() {
+    const emailRef = useRef
+    const passwordRef = useRef
+
+    const handleLoginForm = async (e) => {
+        e.preventDefault();
+        setError(false)
+        try {
+            const response = await axios.post("http://localhost:3000/api/login", {
+                username,
+                email,
+                password
+            });
+            response.data && window.location.replace("/login")
+        } catch (error) {
+            setError(true)
+        }
+    };
+
     return (
         <div className="login__container">
             <div className="logo">
@@ -13,8 +31,7 @@ function Login() {
             <div className="login__form">
                 <h2>Login to Expressify</h2>
                 <div className="form">
-                    <form >
-                    {/* onSubmit={this.onSubmit} */}
+                    <form onSubmit={handleLoginForm}>
                         <div className="emailLogin">
                             <input
                                 type="email"
@@ -24,6 +41,7 @@ function Login() {
                                 // onChange={this.onChange}
                                 // value={email}
                                 autoComplete="off"
+                                ref={emailRef}
                             />
                         </div>
                         <div className="passwordLogin">
@@ -36,6 +54,7 @@ function Login() {
                                 // onChange={this.onChange}
                                 // value={password}
                                 autoComplete="off"
+                                ref={passwordRef}
                             />
                         </div>
                         <input type="submit" value="Log In" />
