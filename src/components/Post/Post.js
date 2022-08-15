@@ -12,7 +12,7 @@ function Post({ post }) {
                     <div className='post__content'>
                         <div className='post__owner'>
                             <Avatar src={postImage} className='user__avatar' />
-                            <span>Andy John</span>
+                            <span>{post.user?.username}</span>
                         </div>
                         <h1>{post.title}</h1>
                         <p>{post.content}</p>

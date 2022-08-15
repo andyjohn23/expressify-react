@@ -8,12 +8,21 @@ import axios from 'axios'
 
 function HomePage() {
     const [posts, setPosts] = useState([]);
+    const [user, setUser] = useState({});
     useEffect(() => {
         const fetchPost = async () => {
             const response = await axios.get("http://localhost:3000/api/posts")
             setPosts(response.data)
         }
         fetchPost()
+    }, [])
+
+    useEffect(() => {
+        const getUser = async () => {
+            const response = await axios.get("http://localhost:3000/api/users")
+            setUser(response.data)
+        }
+        getUser()
     }, [])
 
     return (
