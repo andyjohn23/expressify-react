@@ -1,25 +1,29 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import "./Login.css"
 import { Link } from "react-router-dom";
+import { Context } from '../../context/Context';
+import axios from 'axios';
 
 function Login() {
-    const emailRef = useRef
-    const passwordRef = useRef
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const { user, dispatch, isFetching } = useContext(Context);
 
-    const handleLoginForm = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(false)
+        dispatch({ type: "LOGIN_START" });
         try {
             const response = await axios.post("http://localhost:3000/api/login", {
-                username,
-                email,
-                password
+                email: emailRef.current.value,
+                password: passwordRef.current.value,
             });
-            response.data && window.location.replace("/login")
-        } catch (error) {
-            setError(true)
+            dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+        } catch (err) {
+            dispatch({ type: "LOGIN_FAILURE" });
         }
     };
+
+    console.log(user)
 
     return (
         <div className="login__container">
@@ -31,7 +35,7 @@ function Login() {
             <div className="login__form">
                 <h2>Login to Expressify</h2>
                 <div className="form">
-                    <form onSubmit={handleLoginForm}>
+                    <form onSubmit={handleSubmit}>
                         <div className="emailLogin">
                             <input
                                 type="email"
