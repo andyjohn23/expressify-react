@@ -23,7 +23,7 @@ function SinglePost() {
 
     useEffect(() => {
         const getUser = async () => {
-            const response = await axios.get("http://localhost:3000/api/users/")
+            const response = await axios.get("http://localhost:3000/api/users")
             setUser(response.data)
         }
         getUser()
@@ -33,7 +33,7 @@ function SinglePost() {
         <div className='singlePost__container'>
             <div className='post__owner'>
                 <Avatar src={singleImage} className='user__avatar' />
-                <span>{user.username}</span>
+                <span>{post.user?.username}</span>
             </div>
             <div className='singlePost__content'>
                 <div className='editIcons'>
