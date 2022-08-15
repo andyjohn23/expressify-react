@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Topbar.css"
 import { Search } from "@mui/icons-material";
 // import { Avatar } from "@mui/material";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom"
+import { Context } from '../../context/Context';
 
 function Topbar() {
+    const { user, dispatch } = useContext(Context)
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" })
+    }
+
     return (
         <div className="navbar__container">
             <Navbar expand="lg" className="navbar" fixed="top">
@@ -34,19 +40,32 @@ function Topbar() {
                                 <div className="navbar__links">
                                     <button>Submit a blog</button>
                                 </div>
-                                <div className="loginLink">
-                                    <Nav.Link className="navLinks">
-                                        <Link to="/login" className="navLinks" style={{ textDecoration: "none" }}>
-                                            <span>Log in</span>
-                                        </Link>
-                                    </Nav.Link>
-                                </div>
+                                {user ? (
+                                    <div className="username__login">
+                                        <Nav.Link className="navLinks">
+                                            <Link to="" className="navLinks" style={{ textDecoration: "none" }}>
+                                                <span style={{ textTransform: "uppercase" }}>{user.username}</span>
+                                            </Link>&nbsp;&nbsp;&nbsp;
+                                            <Link to="" className="navLinks" style={{ textDecoration: "none" }}>
+                                                <span onClick={handleLogout}>{user && "LOGOUT"}</span>
+                                            </Link>
+                                        </Nav.Link>
+                                    </div>
+                                ) : (
+                                    <div className="loginLink">
+                                        <Nav.Link className="navLinks">
+                                            <Link to="/login" className="navLinks" style={{ textDecoration: "none" }}>
+                                                <span>Log in</span>
+                                            </Link>
+                                        </Nav.Link>
+                                    </div>
+                                )}
                             </div>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </div >
     )
 }
 

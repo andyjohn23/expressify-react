@@ -7,7 +7,7 @@ import axios from 'axios';
 function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { user, dispatch, isFetching } = useContext(Context);
+    const { dispatch, isFetching } = useContext(Context);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,8 +22,6 @@ function Login() {
             dispatch({ type: "LOGIN_FAILURE" });
         }
     };
-
-    console.log(user)
 
     return (
         <div className="login__container">
@@ -61,7 +59,7 @@ function Login() {
                                 ref={passwordRef}
                             />
                         </div>
-                        <input type="submit" value="Log In" />
+                        <input type="submit" value="Log In" disabled={isFetching} />
                     </form>
                     <div className="forgotPassword">
                         <Link to="/reset-password" style={{ textDecoration: "none" }}>
