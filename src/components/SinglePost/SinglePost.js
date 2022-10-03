@@ -27,10 +27,25 @@ function SinglePost() {
         }
     }
 
+    const handleUpdate = async (e) => {
+        try {
+            await axios.patch("http://localhost:3000/api/posts/" + path, {
+                user_id: user.id,
+                title,
+                content
+            })
+            window.location.reload();
+        } catch (error) {
+            setError(true)
+        }
+    }
+
     useEffect(() => {
         const getPost = async () => {
             const response = await axios.get("http://localhost:3000/api/posts/" + path)
             setPost(response.data)
+            setTitle(response.data.title)
+            setContent(response.data.content)
         }
         getPost()
     }, [path])
@@ -45,7 +60,7 @@ function SinglePost() {
                 <div className='editIcons'>
                     {modeUpdate ?
                         <input type="text" placeholder="Title" className='title'
-                            value={post.title} name="title" onChange={(e) => setTitle(e.target.value)} /> : (
+                            value={title} name="title" onChange={(e) => setTitle(e.target.value)} /> : (
                             <div className='title'>
                                 <h1>{post.title}</h1>
                             </div>
@@ -65,12 +80,13 @@ function SinglePost() {
                 {/* <img src={singleImage} alt="postimage" className='postImage' /> */}
                 {modeUpdate ?
                     <textarea type="text" name='content' rows="10" cols="50" placeholder="Write something interesting..."
-                        value={post.content} onChange={(e) => setContent(e.target.value)}
+                        value={content} onChange={(e) => setContent(e.target.value)}
                     ></textarea> : (
                         <p>{post.content}</p>
                     )
                 }
             </div>
+            <button onClick={handleUpdate}>Update</button>
         </div>
     )
 }
