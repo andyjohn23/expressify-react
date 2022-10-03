@@ -13,6 +13,16 @@ function SinglePost() {
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
     const { user } = useContext(Context)
+    const [error, setError] = useState(false)
+
+    const handleDelete = async (e) => {
+        try {
+            await axios.delete("http://localhost:3000/api/posts/" + path)
+            window.location.replace("/")
+        }catch (error){
+            setError(true)
+        }
+    }
 
     useEffect(() => {
         const getPost = async () => {
@@ -36,7 +46,9 @@ function SinglePost() {
                     {post.user?.id === user?.id && (
                         <div className='Icons'>
                             <EditIcon className='editIcon' style={{ cursor: "pointer" }} />
-                            <DeleteIcon className='deleteIcon' style={{ cursor: "pointer" }} />
+                            <DeleteIcon className='deleteIcon' style={{ cursor: "pointer" }}
+                                onClick={handleDelete}
+                            />
                         </div>
                     )}
                 </div>
