@@ -12,14 +12,17 @@ function SinglePost() {
     const location = useLocation()
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
-    const { user } = useContext(Context)
-    const [error, setError] = useState(false)
+    const { user } = useContext(Context);
+    const [error, setError] = useState(false);
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [modeUpdate, setModeUpdate] = useState(false);
 
     const handleDelete = async (e) => {
         try {
             await axios.delete("http://localhost:3000/api/posts/" + path)
             window.location.replace("/")
-        }catch (error){
+        } catch (error) {
             setError(true)
         }
     }
@@ -40,12 +43,19 @@ function SinglePost() {
             </div>
             <div className='singlePost__content'>
                 <div className='editIcons'>
-                    <div className='title'>
-                        <h1>{post.title}</h1>
-                    </div>
+                    {modeUpdate ?
+                        <input type="text" placeholder="Title" className='postTitle'
+                            value={post.title} name="title" onChange={(e) => setTitle(e.target.value)} /> : (
+                            <div className='title'>
+                                <h1>{post.title}</h1>
+                            </div>
+                        )
+                    }
                     {post.user?.id === user?.id && (
                         <div className='Icons'>
-                            <EditIcon className='editIcon' style={{ cursor: "pointer" }} />
+                            <EditIcon className='editIcon' style={{ cursor: "pointer" }}
+                                onClick={() => setModeUpdate(true)}
+                            />
                             <DeleteIcon className='deleteIcon' style={{ cursor: "pointer" }}
                                 onClick={handleDelete}
                             />
