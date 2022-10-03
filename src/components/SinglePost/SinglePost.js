@@ -44,7 +44,7 @@ function SinglePost() {
             <div className='singlePost__content'>
                 <div className='editIcons'>
                     {modeUpdate ?
-                        <input type="text" placeholder="Title" className='postTitle'
+                        <input type="text" placeholder="Title" className='title'
                             value={post.title} name="title" onChange={(e) => setTitle(e.target.value)} /> : (
                             <div className='title'>
                                 <h1>{post.title}</h1>
@@ -62,8 +62,14 @@ function SinglePost() {
                         </div>
                     )}
                 </div>
-                <img src={singleImage} alt="postimage" className='postImage' />
-                <p>{post.content}</p>
+                {/* <img src={singleImage} alt="postimage" className='postImage' /> */}
+                {modeUpdate ?
+                    <textarea type="text" name='content' rows="10" cols="50" placeholder="Write something interesting..."
+                        value={post.content} onChange={(e) => setContent(e.target.value)}
+                    ></textarea> : (
+                        <p>{post.content}</p>
+                    )
+                }
             </div>
         </div>
     )
