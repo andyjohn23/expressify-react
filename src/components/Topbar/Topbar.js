@@ -38,7 +38,9 @@ function Topbar() {
                         <Nav className="ml-auto">
                             <div className="navbar__right">
                                 <div className="navbar__links">
-                                    <button>Submit a blog</button>
+                                    <Link to="/createblog" style={{ textDecoration: "none" }}>
+                                        <button>Submit a blog</button>
+                                    </Link>
                                 </div>
                                 {user ? (
                                     <div className="username__login">
