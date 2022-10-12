@@ -34,8 +34,8 @@ function HomePage() {
                 <HomeSlider />
             </div>
             <div className='homePage__content container-fluid'>
+                <h1>discover more of what matters to you</h1>
                 <Posts posts={posts} />
-                <Sidebar />
             </div>
         </div>
     )

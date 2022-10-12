@@ -18,16 +18,16 @@
 }
 
 .homeSlider__container .homeSlider__left h1 {
-    font-size: 70px;
+    font-size: 62px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Sora", sans-serif;
     color: black !important;
 }
 
 .homeSlider__container .homeSlider__left p {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: normal;
-    font-family: sans-serif;
+    font-family: "Sora", sans-serif;
     color: black;
     padding-bottom: 1.5rem;
 }
@@ -37,7 +37,7 @@
     height: 45px;
     border-radius: 30px;
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: "Sora", sans-serif;
     border: none;
     background-color: rgba(14, 147, 205, 0.85);
     color: white;
