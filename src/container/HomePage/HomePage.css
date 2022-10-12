@@ -1,9 +1,9 @@
 .homePage__content {
     gap: 4rem;
-    margin-top: 2.5rem;
+    padding: 2.5rem;
 }
 .homePage__content h1 {
-    font-size: 28px;
+    font-size: 25px;
     font-family: "Sora", sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.7);
