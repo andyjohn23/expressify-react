@@ -21,7 +21,7 @@ function Write() {
         }
         try {
             const response = await axios.post("http://localhost:3000/api/posts", newPost)
-            window.location.replace("/post/" + response.data._id);
+            window.location.replace("/");
             console.log(response)
         } catch (error) {
             setError(true)
