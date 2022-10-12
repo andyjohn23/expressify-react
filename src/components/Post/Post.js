@@ -21,9 +21,9 @@ function Post({ post }) {
                 </Link>
                 <Link to={`/post/${post.id}`} style={{ textDecoration: "none" }}>
                     <Card.Img src={postImage} className="post__image" />
-                    <Card.Body>
-                        <Card.Title>{post.title}</Card.Title>
-                        <Card.Text>{post.content}</Card.Text>
+                    <Card.Body className='post__body'>
+                        <Card.Title className='post__title'>{post.title}</Card.Title>
+                        <Card.Text className='post__content'>{post.content.substring(0, 250)}...</Card.Text>
                     </Card.Body>
                 </Link>
             </Card>
