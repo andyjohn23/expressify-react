@@ -34,7 +34,7 @@ function SinglePost() {
                 title,
                 content
             })
-            window.location.reload();
+            setModeUpdate(false)
         } catch (error) {
             setError(true)
         }
@@ -62,7 +62,7 @@ function SinglePost() {
                         <input type="text" placeholder="Title" className='title'
                             value={title} name="title" onChange={(e) => setTitle(e.target.value)} /> : (
                             <div className='title'>
-                                <h1>{post.title}</h1>
+                                <h1>{title}</h1>
                             </div>
                         )
                     }
@@ -82,7 +82,7 @@ function SinglePost() {
                     <textarea type="text" name='content' rows="10" cols="50" placeholder="Write something interesting..."
                         value={content} onChange={(e) => setContent(e.target.value)}
                     ></textarea> : (
-                        <p>{post.content}</p>
+                        <p>{content}</p>
                     )
                 }
             </div>
