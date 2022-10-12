@@ -86,7 +86,9 @@ function SinglePost() {
                     )
                 }
             </div>
-            <button onClick={handleUpdate}>Update</button>
+            {modeUpdate &&
+                <button onClick={handleUpdate}>Update</button>
+            }
         </div>
     )
 }
