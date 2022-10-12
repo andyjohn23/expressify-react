@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import HomeSlider from '../../components/Homeslider/HomeSlider'
 import Posts from '../../components/Posts/Posts'
-import Sidebar from '../../components/Sidebar/Sidebar'
 import Topbar from '../../components/Topbar/Topbar'
 import "./HomePage.css"
 import axios from 'axios'
@@ -35,7 +34,11 @@ function HomePage() {
             </div>
             <div className='homePage__content container-fluid'>
                 <h1>discover more of what matters to you</h1>
-                <Posts posts={posts} />
+                <div className='row'>
+                    <div className='col-md-3'>
+                        <Posts posts={posts} />
+                    </div>
+                </div>
             </div>
         </div>
     )
