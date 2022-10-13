@@ -10,7 +10,7 @@ function HomePage() {
     const [user, setUser] = useState({});
     useEffect(() => {
         const fetchPost = async () => {
-            const response = await axios.get("http://localhost:3000/api/posts")
+            const response = await axios.get("https://expressify-rails-andy.herokuapp.com/api/posts")
             setPosts(response.data)
         }
         fetchPost()
@@ -18,7 +18,7 @@ function HomePage() {
 
     useEffect(() => {
         const getUser = async () => {
-            const response = await axios.get("http://localhost:3000/api/users")
+            const response = await axios.get("https://expressify-rails-andy.herokuapp.com/api/users")
             setUser(response.data)
         }
         getUser()

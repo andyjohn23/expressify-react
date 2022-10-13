@@ -20,7 +20,7 @@ function SinglePost() {
 
     const handleDelete = async (e) => {
         try {
-            await axios.delete("http://localhost:3000/api/posts/" + path)
+            await axios.delete("https://expressify-rails-andy.herokuapp.com/api/posts/" + path)
             window.location.replace("/")
         } catch (error) {
             setError(true)
@@ -29,7 +29,7 @@ function SinglePost() {
 
     const handleUpdate = async (e) => {
         try {
-            await axios.patch("http://localhost:3000/api/posts/" + path, {
+            await axios.patch("https://expressify-rails-andy.herokuapp.com/api/posts/" + path, {
                 user_id: user.id,
                 title,
                 content
@@ -42,7 +42,7 @@ function SinglePost() {
 
     useEffect(() => {
         const getPost = async () => {
-            const response = await axios.get("http://localhost:3000/api/posts/" + path)
+            const response = await axios.get("https://expressify-rails-andy.herokuapp.com/api/posts/" + path)
             setPost(response.data)
             setTitle(response.data.title)
             setContent(response.data.content)

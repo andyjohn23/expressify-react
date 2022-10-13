@@ -20,7 +20,7 @@ function Write() {
             content
         }
         try {
-            const response = await axios.post("http://localhost:3000/api/posts", newPost)
+            const response = await axios.post("https://expressify-rails-andy.herokuapp.com/api/posts", newPost)
             window.location.replace("/");
             console.log(response)
         } catch (error) {

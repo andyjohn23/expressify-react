@@ -20,7 +20,7 @@ function Signup() {
         e.preventDefault();
         setError(false)
         try {
-            const response = await axios.post("http://localhost:3000/api/users", {
+            const response = await axios.post("https://expressify-rails-andy.herokuapp.com/api/users", {
                 username,
                 email,
                 password
@@ -80,18 +80,6 @@ function Signup() {
                                 required
                             />
                         </div>
-                        {/* <div className="passwordSignup">
-                            <input
-                                type="password"
-                                className="passwordInput"
-                                placeholder="Confirm Password"
-                                name="password_confirmation"
-                                minLength="6"
-                                value={password2}
-                                onChange={(e) => onChange(e)}
-                                
-                            />
-                        </div> */}
                         <input type="submit" value="Sign up" />
                     </form>
                     <div className="haveAccount">

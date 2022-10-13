@@ -13,7 +13,7 @@ function Login() {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const response = await axios.post("http://localhost:3000/api/user/login", {
+            const response = await axios.post("https://expressify-rails-andy.herokuapp.com/api/user/login", {
                 email: emailRef.current.value,
                 password: passwordRef.current.value,
             });
