@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Topbar from '../../components/Topbar/Topbar'
 import "./Write.css"
-import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import { Context } from '../../context/Context';
 
@@ -37,7 +36,6 @@ function Write() {
                 <h1>CREATE A BLOG</h1>
                 <form className='postForm' onSubmit={handleSubmit}>
                     <label htmlFor='fileInput'>
-                        <AddIcon className='addIcon' />
                         <input type="text" placeholder="Title" className='postTitle'
                             value={title} name="title" onChange={(e) => setTitle(e.target.value)}
                         />
